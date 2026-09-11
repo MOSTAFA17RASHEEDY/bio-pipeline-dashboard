@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens ported from stitch_bio_pipeline_dashboard/bio_pipeline_dashboard/DESIGN.md
+ * ("High-Density Technical Modernism" -- a dark, console-style theme for a
+ * bioinformatics dashboard). This app is deliberately always-dark, matching
+ * that design system's intent (built for long technical sessions), not
+ * light/dark-adaptive.
+ *
+ * Tailwind v4 note: any --color-* / --font-* variable declared here
+ * automatically becomes a utility class, e.g. --color-primary generates
+ * bg-primary / text-primary / border-primary.
+ */
+@theme {
+  --color-surface: #0b1326;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-surface-bright: #31394d;
+
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #bbcac6;
+  --color-outline: #859490;
+  --color-outline-variant: #3c4947;
+
+  --color-primary: #4fdbc8;
+  --color-on-primary: #003731;
+  --color-primary-container: #14b8a6;
+  --color-on-primary-container: #00423b;
+  --color-primary-fixed: #71f8e4;
+
+  --color-secondary: #4cd7f6;
+  --color-on-secondary: #003640;
+  --color-secondary-container: #03b5d3;
+
+  --color-tertiary: #6bd8cb;
+  --color-on-tertiary: #003732;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+/* Material Symbols icon font: sized/aligned like a normal inline glyph by default */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 20;
+  line-height: 1;
+  vertical-align: middle;
+}

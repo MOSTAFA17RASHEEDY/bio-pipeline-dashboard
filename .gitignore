@@ -1,0 +1,30 @@
+# Nextflow
+pipeline/work/
+pipeline/results/
+pipeline/.nextflow/
+pipeline/.nextflow.log*
+*.nextflow.log*
+
+# API-triggered pipeline runs (uploaded files + per-run results/logs)
+pipeline/api_runs/
+
+# .NET
+backend/bin/
+backend/obj/
+backend/*.db
+backend/*.db-shm
+backend/*.db-wal
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+
+# Secrets
+.env
+*.env.local
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vs/
+.vscode/

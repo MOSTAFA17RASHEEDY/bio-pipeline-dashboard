@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#00424e","on-tertiary":"#003732","outline-variant":"#3c4947","primary-fixed-dim":"#4fdbc8","primary":"#4fdbc8","surface-container-lowest":"#060e20","secondary-container":"#03b5d3","surface-dim":"#0b1326","on-surface-variant":"#bbcac6","surface-container-highest":"#2d3449","on-primary-fixed":"#00201c","on-tertiary-fixed":"#00201d","on-secondary-fixed":"#001f26","on-surface":"#dae2fd","secondary-fixed":"#acedff","tertiary":"#6bd8cb","on-secondary-fixed-variant":"#004e5c","surface-bright":"#31394d","on-primary-fixed-variant":"#005048","on-primary":"#003731","surface":"#0b1326","surface-container":"#171f33","tertiary-fixed-dim":"#6bd8cb","surface-container-low":"#131b2e","error-container":"#93000a","secondary-fixed-dim":"#4cd7f6","on-secondary":"#003640","inverse-primary":"#006b5f","secondary":"#4cd7f6","on-error":"#690005","inverse-surface":"#dae2fd","on-error-container":"#ffdad6","primary-fixed":"#71f8e4","surface-container-high":"#222a3d","error":"#ffb4ab","on-tertiary-fixed-variant":"#005049","background":"#0b1326","tertiary-fixed":"#89f5e7","surface-variant":"#2d3449","outline":"#859490","primary-container":"#14b8a6","on-background":"#dae2fd","on-tertiary-container":"#00423c","on-primary-container":"#00423b","inverse-on-surface":"#283044","tertiary-container":"#44b5a8","surface-tint":"#4fdbc8"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-2xl":"3rem","space-md":"0.75rem",gutter:"1rem","space-base":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xxs":"0.125rem","space-xs":"0.25rem","margin-page":"1.5rem","space-xl":"2rem","log-panel-height":"14rem","sidebar-width":"16rem"},fontFamily:{"label-code-lg":["JetBrains Mono"],"body-sm":["Inter"],"label-code-md":["JetBrains Mono"],"display-lg-mobile":["Inter"],caption:["Inter"],"body-md":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"],"label-code-sm":["JetBrains Mono"],"display-lg":["Inter"]},fontSize:{"label-code-lg":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"label-code-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"display-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],caption:["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-code-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"400"}],"display-lg":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-sidebar-width bg-surface-container-low z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-12 px-space-base flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><img alt="Bio Pipeline DNA Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vh3vGAq-9SMLVghLw_4GgRL7zT_ExR0j1YfsL5scRJu_p8xGsibnPLZbB3qLYqyhpMHy_BE2Ug_hib5G6G7NqdbSgxNxZSkfpSl2iJFWSqWOZ8SHAP-Sulu8ODcluoanQo2Dgsjlfij3aBbdJuU7BL8sBBMXnv_o7r6Tf8nNzlgTNMfQjKWBc1gAEDBZxUwehWWnQ9oqmPSBw1NfL8nkhjOtEn_M8iAj9FLdWx2jh_7-u46Gvxx58-Wis"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Bio Pipeline</span><span class="font-caption text-caption text-primary tracking-wide leading-none mt-space-xxs">CLI / Web v2.4</span></div></div></div><div class="px-space-base py-space-sm"><div class="flex items-center justify-between px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant"><span class="font-label-code-sm text-label-code-sm flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>NODE ONLINE</span><span class="font-label-code-sm text-label-code-sm text-secondary">2.4.1</span></div></div><nav class="px-space-sm space-y-space-xxs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded transition-colors bg-primary-container text-on-primary-container font-headline-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-base">query_stats</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="new-run" href="#"><span class="material-symbols-outlined text-base">add_circle</span><span>New Run</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reference-genomes" href="#"><span class="material-symbols-outlined text-base">database</span><span>Reference Genomes</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings-toolchain" href="#"><span class="material-symbols-outlined text-base">tune</span><span>Settings &amp; Toolchain</span></a></nav></div><div class="flex flex-col bg-surface-container-low p-space-sm space-y-space-sm"><div class="p-space-sm rounded bg-surface-container-lowest font-label-code-sm text-label-code-sm text-on-surface-variant space-y-space-xs"><div class="flex items-center justify-between"><span class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Node 04</span><span class="text-primary">Idle</span></div><div class="flex items-center justify-between"><span>GPU Ready</span><span class="text-secondary">1x A10G</span></div><div class="flex items-center justify-between"><span>Memory</span><span class="text-on-surface">14.2 / 64 GB</span></div><div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mt-space-xs"><div class="bg-primary h-full w-[22%]"></div></div></div><div class="flex items-center justify-between p-space-xs rounded bg-surface-container-low"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI6j0tzgSyIuNHvXR6_t4Pi4Yn0GTkcZTuUCYqBiyTu7k50uUQvpjm_NpMFkDxTCS1pLKsuobrUb_pJ8Bo80FVvlgViKh1J34A42xR8ovjXE4eMhCJaClGrzajEeSe-irMqrVqryt0IX2SoESW9BaWHt0Be3zzwS3e0-B8bkr6suGtYkn8t8BZGGVAuekqyJfBQrjgHBRxznfXzbalwMPOaFvDqETTw4MVegkosU1gCG9apzGQOWtHvg"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Dr. Alex Mercer, PhD</span><span class="font-caption text-caption text-on-surface-variant truncate leading-none mt-space-xxs">Computational Genomics</span></div></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs" type="button"><span class="material-symbols-outlined text-sm">more_vert</span></button></div></div></aside><div class="pl-sidebar-width min-h-screen flex flex-col bg-background"><header class="fixed top-0 left-sidebar-width right-0 h-12 bg-surface/85 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg select-none"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xxs rounded bg-surface-container font-label-code-sm text-label-code-sm text-on-surface-variant"><span class="material-symbols-outlined text-xs text-primary">dns</span><span>GRCh38 Reference</span><span class="text-outline">|</span><span>Pipeline v2.4.1</span></div><div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary"></span><span>All Nodes Healthy</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-sm py-space-xxs rounded bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm"><span class="material-symbols-outlined text-sm text-on-surface-variant">search</span><span>Search variants, genes, runs...</span><kbd class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface">⌘K</kbd></div><div class="flex items-center gap-space-xs text-on-surface-variant"><button class="p-space-xs rounded hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-sm">terminal</span></button><button class="p-space-xs rounded hover:bg-surface-container hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-sm">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-secondary rounded-full"></span></button></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI6j0tzgSyIuNHvXR6_t4Pi4Yn0GTkcZTuUCYqBiyTu7k50uUQvpjm_NpMFkDxTCS1pLKsuobrUb_pJ8Bo80FVvlgViKh1J34A42xR8ovjXE4eMhCJaClGrzajEeSe-irMqrVqryt0IX2SoESW9BaWHt0Be3zzwS3e0-B8bkr6suGtYkn8t8BZGGVAuekqyJfBQrjgHBRxznfXzbalwMPOaFvDqETTw4MVegkosU1gCG9apzGQOWtHvg"/></div></header><main class="w-full pt-12 flex-1 bg-background"><div class="flex flex-col w-full">
+<div class="w-full px-margin-page py-space-lg space-y-space-lg">
+<!-- Top Action & Status Rail -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-sm">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Pipeline Runs</a>
+<span class="text-outline">/</span>
+<span class="text-secondary font-label-code-sm">RUN-8919</span>
+<span class="text-outline">•</span>
+<span>Flowcell FC-78A-02</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">RUN-8919: TP53_tumor_paired_01.fastq</h1>
+<div class="flex items-center gap-space-xs px-space-sm py-space-xxs rounded bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-sm text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-code-sm text-label-code-sm font-semibold">DONE</span>
+<span class="text-outline">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Completed in 19m 45s</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container-highest text-secondary hover:bg-surface-bright transition-all shadow-sm group" type="button">
+<span class="material-symbols-outlined text-base text-primary animate-spin" style="animation-duration: 4s;">auto_awesome</span>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-normal">Explain with AI</span>
+<span class="font-label-code-sm text-label-code-sm px-space-xxs bg-surface-container rounded text-primary">GPT-Bio</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-base text-secondary">download</span>
+<span class="font-body-sm text-body-sm font-medium">Download VCF</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-base text-on-surface-variant">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm font-medium">Export QC Report (PDF)</span>
+</button>
+</div>
+</div>
+<!-- 3-Stage Pipeline Stepper -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Stage 1 -->
+<div class="relative bg-surface-container-low p-space-md rounded shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase tracking-wider">Step 01 / Pipeline</span>
+<div class="flex items-center gap-space-xxs text-primary font-label-code-sm text-label-code-sm">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>PASS</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-sm text-headline-sm text-on-surface">Quality Check</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">FastQC &amp; Trimmomatic Adapter Removal</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/60 px-space-sm py-space-xxs rounded mt-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-tertiary font-medium">Q39.1 Mean Phred</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">2m 10s</span>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="relative bg-surface-container-low p-space-md rounded shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase tracking-wider">Step 02 / Pipeline</span>
+<div class="flex items-center gap-space-xxs text-primary font-label-code-sm text-label-code-sm">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>PASS</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-sm text-headline-sm text-on-surface">Alignment (BWA-MEM2)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">Target: GRCh38.p13 Primary Assembly</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/60 px-space-sm py-space-xxs rounded mt-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-primary font-medium">99.8% Reads Mapped</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">11m 18s</span>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="relative bg-surface-container-low p-space-md rounded shadow-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant uppercase tracking-wider">Step 03 / Pipeline</span>
+<div class="flex items-center gap-space-xxs text-primary font-label-code-sm text-label-code-sm">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>PASS</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-sm text-headline-sm text-on-surface">Variant Calling (GATK)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">HaplotypeCaller &amp; CNNScoreVariants</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/60 px-space-sm py-space-xxs rounded mt-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-secondary font-medium">VCF 4.2 generated</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">6m 17s</span>
+</div>
+</div>
+</div>
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Primary Hero Card -->
+<div class="bg-surface-container-high p-space-lg rounded shadow-md relative overflow-hidden flex flex-col justify-between">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-8xl text-primary">biotech</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-primary tracking-wider uppercase font-semibold">Genomic Alterations</span>
+<span class="material-symbols-outlined text-primary text-base">strikethrough_s</span>
+</div>
+<div class="my-space-sm">
+<div class="font-display-lg text-display-lg text-primary tracking-tight font-bold">12 Variants</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">9 SNPs • 2 InDels • 1 Frameshift</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+<!-- Reads Aligned -->
+<div class="bg-surface-container-low p-space-lg rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">Reads Aligned</span>
+<span class="font-label-code-sm text-label-code-sm text-secondary font-semibold">99.84%</span>
+</div>
+<div class="my-space-sm">
+<div class="font-headline-md text-headline-md text-on-surface font-semibold">4,812,440</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">of 4,820,119 sequenced total pairs</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="text-primary font-medium">PASS</span>
+<span>&gt; 95% threshold criteria</span>
+</div>
+</div>
+<!-- Mean Coverage Depth -->
+<div class="bg-surface-container-low p-space-lg rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">Coverage Depth</span>
+<span class="font-label-code-sm text-label-code-sm text-primary font-semibold">Exome QC</span>
+</div>
+<div class="my-space-sm">
+<div class="font-headline-md text-headline-md text-on-surface font-semibold">34.8x</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">Target: &gt; 30.0x clinical confidence</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Uniformity: 94.2% within 0.2x mean</span>
+</div>
+</div>
+<!-- Ti/Tv Ratio -->
+<div class="bg-surface-container-low p-space-lg rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">Ti / Tv Metric</span>
+<span class="font-label-code-sm text-label-code-sm text-secondary font-semibold">Normal</span>
+</div>
+<div class="my-space-sm">
+<div class="font-headline-md text-headline-md text-on-surface font-semibold">2.25</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-space-xxs">Standard Human Targeted Exome Ratio</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">insights</span>
+<span>Target baseline [2.10 - 2.30]</span>
+</div>
+</div>
+</div>
+<!-- Visual Sequence Locus Strip -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">grain</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Target Coordinate Window: chr17:7,668,402 - 7,687,550</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Cellular tumor antigen p53 (TP53) • 11 Coding Exons • Transcript NM_000546.6</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-xs rounded">
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant">Reference Build:</span>
+<span class="font-label-code-sm text-label-code-sm text-primary font-medium">GRCh38 / hg38</span>
+</div>
+</div>
+<!-- Genomic Variants Data Table Section -->
+<div class="bg-surface-container-low rounded shadow-md flex flex-col overflow-hidden">
+<!-- Table Controls Bar -->
+<div class="p-space-md bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm flex-1 max-w-2xl">
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-sm text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-space-md py-space-xs rounded bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-highest transition-colors" placeholder="Search gene, locus, or rsID (e.g. TP53, chr17)..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xxs bg-surface-container-lowest p-space-xxs rounded">
+<button class="px-space-sm py-space-xxs rounded bg-primary text-on-primary font-label-code-sm text-label-code-sm font-semibold" type="button">All (12)</button>
+<button class="px-space-sm py-space-xxs rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-code-sm text-label-code-sm transition-colors" type="button">SNPs (9)</button>
+<button class="px-space-sm py-space-xxs rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-code-sm text-label-code-sm transition-colors" type="button">InDels (2)</button>
+<button class="px-space-sm py-space-xxs rounded text-error hover:bg-error/10 font-label-code-sm text-label-code-sm transition-colors" type="button">Pathogenic (1)</button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-space-xs rounded text-on-surface-variant">
+<span class="font-label-code-sm text-label-code-sm">Sort:</span>
+<select class="bg-transparent text-on-surface font-label-code-sm text-label-code-sm focus:outline-none cursor-pointer">
+<option class="bg-surface-container text-on-surface" value="phred">Quality Score (Phred)</option>
+<option class="bg-surface-container text-on-surface" value="pos">Genomic Position</option>
+<option class="bg-surface-container text-on-surface" value="depth">Allelic Depth (AD)</option>
+</select>
+</div>
+<button class="p-space-xs rounded bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Column Filter" type="button">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+</div>
+</div>
+<!-- High-Density Data Grid -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase select-none">
+<th class="py-space-sm px-space-md font-medium">Position (GRCh38)</th>
+<th class="py-space-sm px-space-md font-medium">Gene</th>
+<th class="py-space-sm px-space-md font-medium text-center">Ref</th>
+<th class="py-space-sm px-space-md font-medium text-center">Alt</th>
+<th class="py-space-sm px-space-md font-medium">Type</th>
+<th class="py-space-sm px-space-md font-medium">ClinVar / Impact</th>
+<th class="py-space-sm px-space-md font-medium text-right">Phred</th>
+<th class="py-space-sm px-space-md font-medium text-right">Allelic Depth (AD/DP)</th>
+<th class="py-space-sm px-space-md font-medium text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<!-- Row 1: Pathogenic TP53 Hotspot -->
+<tr class="bg-surface-container/40 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,673,776
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">C</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-error/20 text-error font-bold">T</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-primary/10 text-primary font-label-code-sm text-label-code-sm">SNP</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-error/15 text-error font-label-code-sm text-label-code-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  Pathogenic (Likely)
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q99.0
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                42/86 <span class="text-on-surface-variant text-label-code-sm">(48.8%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-lowest/30 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,674,220
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">G</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-primary/20 text-primary font-bold">A</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-primary/10 text-primary font-label-code-sm text-label-code-sm">SNP</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm">
+                  Benign
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q95.2
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                38/79 <span class="text-on-surface-variant text-label-code-sm">(48.1%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: InDel Deletion -->
+<tr class="bg-surface-container/40 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,675,088
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">CTG</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-secondary-container/20 text-secondary font-bold">C</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-secondary/10 text-secondary font-label-code-sm text-label-code-sm">Deletion</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-secondary font-label-code-sm text-label-code-sm font-medium">
+                  Uncertain Significance
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q88.4
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                21/64 <span class="text-on-surface-variant text-label-code-sm">(32.8%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-lowest/30 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,676,154
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">A</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-primary/20 text-primary font-bold">G</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-primary/10 text-primary font-label-code-sm text-label-code-sm">SNP</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm">
+                  Moderate
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q92.1
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                50/104 <span class="text-on-surface-variant text-label-code-sm">(48.0%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: InDel Insertion -->
+<tr class="bg-surface-container/40 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,677,012
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">T</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-tertiary/20 text-tertiary font-bold">TC</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-tertiary-container/30 text-tertiary font-label-code-sm text-label-code-sm">Insertion</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm">
+                  Benign
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q76.0
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                19/52 <span class="text-on-surface-variant text-label-code-sm">(36.5%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="bg-surface-container-lowest/30 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,678,245
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">WRAP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">G</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-primary/20 text-primary font-bold">C</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-primary/10 text-primary font-label-code-sm text-label-code-sm">SNP</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm">
+                  Modifier
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q91.8
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                33/68 <span class="text-on-surface-variant text-label-code-sm">(48.5%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="bg-surface-container/40 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,678,901
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">T</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-primary/20 text-primary font-bold">C</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-primary/10 text-primary font-label-code-sm text-label-code-sm">SNP</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm">
+                  Synonymous
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q94.6
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                47/95 <span class="text-on-surface-variant text-label-code-sm">(49.4%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="bg-surface-container-lowest/30 hover:bg-surface-container transition-colors group">
+<td class="py-space-xs px-space-md font-label-code-md text-label-code-md text-secondary font-medium whitespace-nowrap">
+                chr17:7,679,114
+              </td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-surface-container-highest font-label-code-sm text-label-code-sm text-on-surface font-semibold">TP53</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-surface-container-highest text-on-surface-variant">A</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<span class="px-space-xs py-0.5 rounded font-label-code-sm text-label-code-sm bg-primary/20 text-primary font-bold">G</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="px-space-xs py-space-xxs rounded bg-primary/10 text-primary font-label-code-sm text-label-code-sm">SNP</span>
+</td>
+<td class="py-space-xs px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-space-xxs px-space-sm py-space-xxs rounded bg-surface-container-highest text-on-surface-variant font-label-code-sm text-label-code-sm">
+                  Intronic
+                </span>
+</td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-primary font-semibold whitespace-nowrap">
+                Q89.2
+              </td>
+<td class="py-space-xs px-space-md text-right font-label-code-md text-label-code-md text-on-surface whitespace-nowrap">
+                39/81 <span class="text-on-surface-variant text-label-code-sm">(48.1%)</span>
+</td>
+<td class="py-space-xs px-space-md text-center whitespace-nowrap">
+<button class="text-on-surface-variant hover:text-primary p-space-xxs rounded transition-colors" title="Inspect Locus" type="button">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Status Footer -->
+<div class="p-space-sm bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span>Showing 1-8 of 12 variants</span>
+<span class="text-outline">|</span>
+<span>Filter applied: <strong class="text-on-surface font-semibold">None</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-xxs rounded bg-surface-container text-on-surface-variant hover:text-on-surface text-label-code-sm font-label-code-sm disabled:opacity-40" disabled="" type="button">Previous</button>
+<button class="px-space-sm py-space-xxs rounded bg-surface-container text-on-surface hover:bg-surface-container-high text-label-code-sm font-label-code-sm" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- Secondary Collapsible Section: Logs & Reproducibility -->
+<div class="bg-surface-container-low rounded overflow-hidden shadow-sm">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container transition-colors select-none" id="toggleLogsBtn" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-base text-secondary transition-transform duration-200" id="logArrow">chevron_right</span>
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-xs sm:gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Execution Logs &amp; Reproducibility Specs</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant px-space-xs py-space-xxs rounded bg-surface-container-lowest">Nextflow v23.10.0 • Singularity 3.9</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-code-sm text-label-code-sm">
+<span>Exit Code: 0</span>
+<span class="text-primary font-medium flex items-center gap-space-xxs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> SUCCESS
+          </span>
+</div>
+</button>
+<!-- Drawer Content (Hidden by default) -->
+<div class="hidden p-space-md bg-surface-container-lowest space-y-space-md" id="logsDrawer">
+<!-- Environment & Hash Specs -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm font-label-code-sm text-label-code-sm text-on-surface-variant p-space-sm bg-surface-container-low rounded">
+<div class="flex flex-col gap-space-xxs">
+<span class="text-outline">WORKFLOW SHA</span>
+<span class="text-on-surface">commit d9e44f8b912</span>
+</div>
+<div class="flex flex-col gap-space-xxs">
+<span class="text-outline">CONTAINER HASH</span>
+<span class="text-on-surface">sha256:7bc0391d4e0821</span>
+</div>
+<div class="flex flex-col gap-space-xxs">
+<span class="text-outline">COMMAND LINE</span>
+<span class="text-secondary truncate">bwa-mem2 mem -t 16 -R '@RG\tID:RUN8919' ...</span>
+</div>
+</div>
+<!-- Terminal Output Screen -->
+<div class="bg-surface-container-lowest p-space-md rounded font-label-code-sm text-label-code-sm leading-relaxed text-on-surface overflow-x-auto space-y-space-xxs max-h-60 overflow-y-auto">
+<div class="text-on-surface-variant">[2025-03-30 08:14:02.102] <span class="text-primary font-semibold">[INFO]</span> Initializing workflow: BioPipeline-Exome-GATK4-v2.4.1</div>
+<div class="text-on-surface-variant">[2025-03-30 08:14:03.491] <span class="text-primary font-semibold">[INFO]</span> Input reads verified: TP53_tumor_paired_01.fastq (Checksum OK: 9b2d)</div>
+<div class="text-on-surface-variant">[2025-03-30 08:16:13.018] <span class="text-secondary font-semibold">[QC]</span> FastQC completed. Overrepresented sequences: 0. Phred quality mean: 39.1.</div>
+<div class="text-on-surface-variant">[2025-03-30 08:16:15.892] <span class="text-primary font-semibold">[INFO]</span> Spawning BWA-MEM2 alignment using 16 threads across Node-04.</div>
+<div class="text-on-surface-variant">[2025-03-30 08:27:33.411] <span class="text-primary font-semibold">[INFO]</span> SAM to BAM conversion complete with coordinate sorting via Samtools.</div>
+<div class="text-on-surface-variant">[2025-03-30 08:27:35.002] <span class="text-tertiary font-semibold">[GATK]</span> MarkDuplicates: 0.16% optical/PCR duplicate rate flagged.</div>
+<div class="text-on-surface-variant">[2025-03-30 08:33:52.923] <span class="text-tertiary font-semibold">[GATK]</span> HaplotypeCaller completed for interval chr17:7668402-7687550.</div>
+<div class="text-on-surface-variant">[2025-03-30 08:33:53.110] <span class="text-primary font-semibold">[INFO]</span> 12 raw variants identified: 9 SNVs, 3 InDels (1 frameshift). Output written to vcf.gz.</div>
+<div class="text-primary font-semibold">[2025-03-30 08:33:55.882] [COMPLETED] Execution finished with status 0 in 1185 seconds. Artifacts archived.</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="flex items-center gap-space-xs text-secondary hover:text-on-surface font-label-code-sm text-label-code-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy Full Stdout</span>
+</button>
+<button class="flex items-center gap-space-xs text-primary hover:text-on-surface font-label-code-sm text-label-code-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Download execution.log</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const toggleBtn = document.getElementById('toggleLogsBtn');
+    const logsDrawer = document.getElementById('logsDrawer');
+    const logArrow = document.getElementById('logArrow');
+
+    if (toggleBtn && logsDrawer && logArrow) {
+      toggleBtn.addEventListener('click', function() {
+        const isHidden = logsDrawer.classList.contains('hidden');
+        if (isHidden) {
+          logsDrawer.classList.remove('hidden');
+          logArrow.classList.add('rotate-90');
+        } else {
+          logsDrawer.classList.add('hidden');
+          logArrow.classList.remove('rotate-90');
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>
