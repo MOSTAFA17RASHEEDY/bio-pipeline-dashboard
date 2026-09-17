@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../api/client";
 import { AiExplanationDrawer } from "../components/AiExplanationDrawer";
+import { RealPipelineProgress } from "../components/RealPipelineProgress";
 import { StatusBadge } from "../components/StatusBadge";
 import { StepTracker } from "../components/StepTracker";
 import { VariantTable } from "../components/VariantTable";
@@ -87,7 +88,18 @@ export function RunDetailPage() {
         </div>
       </div>
 
-      <StepTracker run={run} />
+      {run.kind === "RealSarek" ? (
+        <>
+          {run.status === "Running" && <RealPipelineProgress run={run} />}
+          {run.status === "Failed" && run.errorMessage && (
+            <div className="rounded border border-error/40 bg-error-container/20 p-3 font-mono text-xs text-error">
+              {run.errorMessage}
+            </div>
+          )}
+        </>
+      ) : (
+        <StepTracker run={run} />
+      )}
 
       {run.status === "Done" && (
         <>
@@ -97,6 +109,27 @@ export function RunDetailPage() {
             <ResultStat label="Insertions" value={String(run.insCount ?? 0)} />
             <ResultStat label="Deletions" value={String(run.delCount ?? 0)} />
           </div>
+
+          {run.kind === "RealSarek" && run.validation && (
+            <div className="rounded bg-surface-container-low p-4 shadow-sm">
+              <h3 className="mb-3 text-sm font-semibold text-on-surface">
+                Accuracy vs. GIAB ground truth
+                <span className="ml-2 font-mono text-[11px] font-normal text-on-surface-variant">
+                  reference numbers for this dataset/config, not recomputed per run
+                </span>
+              </h3>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <ResultStat label="SNV Recall" value={run.validation.snvRecall.toFixed(3)} />
+                <ResultStat label="SNV Precision" value={run.validation.snvPrecision.toFixed(3)} />
+                <ResultStat label="Indel Recall" value={run.validation.indelRecall.toFixed(3)} />
+                <ResultStat label="Indel Precision" value={run.validation.indelPrecision.toFixed(3)} />
+              </div>
+              <p className="mt-3 font-mono text-[11px] text-on-surface-variant">
+                Scored with hap.py against GIAB's NA12878 (HG001) GRCh38 v4.2.1 benchmark — see
+                sarek-reproduction/README.md for the full methodology.
+              </p>
+            </div>
+          )}
 
           <VariantTable variants={run.variants} />
         </>

@@ -20,6 +20,10 @@ public static class RunEndpoints
             .WithSummary("Upload a sample DNA file (FASTQ/FASTA) and start a pipeline run")
             .DisableAntiforgery();
 
+        group.MapPost("/sarek", CreateRealRun)
+            .WithName("CreateRealSarekRun")
+            .WithSummary("Start a real nf-core/sarek run against the fixed NA12878 chr20 dataset (no upload; ~6-10 min)");
+
         group.MapGet("/", ListRuns)
             .WithName("ListRuns")
             .WithSummary("List past and in-progress runs, newest first");
@@ -94,6 +98,36 @@ public static class RunEndpoints
         return Results.Created($"/api/runs/{run.Id}", run.ToDetailDto());
     }
 
+    private static async Task<IResult> CreateRealRun(BioPipelineDbContext db, PipelineRunQueue queue)
+    {
+        var alreadyActive = await db.Runs.AnyAsync(r =>
+            r.Kind == Models.RunKind.RealSarek &&
+            (r.Status == Models.RunStatus.Queued || r.Status == Models.RunStatus.Running));
+        if (alreadyActive)
+        {
+            return Results.Conflict(
+                "A real pipeline run is already queued or running. Wait for it to finish before starting another.");
+        }
+
+        var run = new Models.Run
+        {
+            Kind = Models.RunKind.RealSarek,
+            SampleFileName = "NA12878 (chr20:10,000,000-10,200,000, fixed dataset)",
+            Status = Models.RunStatus.Queued,
+            CreatedAt = DateTime.UtcNow,
+        };
+        db.Runs.Add(run);
+        await db.SaveChangesAsync();
+
+        // ResultsDir is filled in by PipelineRunnerService.RunSarekAsync once
+        // it knows the DB-assigned run Id (it needs that to build the WSL
+        // work dir path) -- left empty until then, same as InputFilePath.
+
+        await queue.EnqueueAsync(run.Id);
+
+        return Results.Created($"/api/runs/{run.Id}", run.ToDetailDto());
+    }
+
     private static async Task<IResult> ListRuns(BioPipelineDbContext db)
     {
         var runs = await db.Runs.OrderByDescending(r => r.CreatedAt).ToListAsync();
@@ -111,11 +145,17 @@ public static class RunEndpoints
         var run = await db.Runs.FindAsync(id);
         if (run is null) return Results.NotFound();
 
-        var vcfPath = Path.Combine(run.ResultsDir, "variants", "variants.vcf");
+        var isReal = run.Kind == Models.RunKind.RealSarek;
+        var vcfPath = isReal
+            ? Path.Combine(run.ResultsDir, "variant_calling", "strelka", "NA12878", "NA12878.strelka.variants.vcf.gz")
+            : Path.Combine(run.ResultsDir, "variants", "variants.vcf");
+
         if (!File.Exists(vcfPath))
             return Results.NotFound("VCF not available yet -- the run may still be in progress.");
 
-        return Results.File(vcfPath, "text/plain", $"run-{id}-variants.vcf");
+        return isReal
+            ? Results.File(vcfPath, "application/gzip", $"run-{id}-strelka.vcf.gz")
+            : Results.File(vcfPath, "text/plain", $"run-{id}-variants.vcf");
     }
 
     private static async Task<IResult> GetLogs(int id, BioPipelineDbContext db)

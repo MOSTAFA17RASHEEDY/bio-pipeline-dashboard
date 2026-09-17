@@ -1,7 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Variant } from "../types";
+import { Pagination } from "./Pagination";
 
 type SortKey = "position" | "type" | "qual" | "depth" | "alleleFrequency";
+const PAGE_SIZE = 25;
 
 const TYPE_STYLES: Record<Variant["type"], string> = {
   SNP: "bg-secondary/15 text-secondary",
@@ -13,6 +15,7 @@ export function VariantTable({ variants }: { variants: Variant[] }) {
   const [filter, setFilter] = useState<"ALL" | Variant["type"]>("ALL");
   const [sortKey, setSortKey] = useState<SortKey>("position");
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   const counts = useMemo(
     () => ({
@@ -38,6 +41,18 @@ export function VariantTable({ variants }: { variants: Variant[] }) {
       return (b[sortKey] as number) - (a[sortKey] as number) || a.position - b.position;
     });
   }, [variants, filter, search, sortKey]);
+
+  // Reset to page 1 whenever the filtered/sorted set changes shape (new
+  // filter, new search term, or the underlying variants themselves change
+  // e.g. after a run finishes) so we never land on a now-empty page.
+  useEffect(() => {
+    setPage(1);
+  }, [filter, search, sortKey, variants]);
+
+  const pageRows = useMemo(
+    () => rows.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [rows, page],
+  );
 
   if (variants.length === 0) {
     return (
@@ -98,7 +113,7 @@ export function VariantTable({ variants }: { variants: Variant[] }) {
             </tr>
           </thead>
           <tbody className="text-sm text-on-surface">
-            {rows.map((v) => (
+            {pageRows.map((v) => (
               <tr
                 key={`${v.chrom}-${v.position}-${v.alt}`}
                 className="border-t border-surface-container-high transition-colors hover:bg-surface-container"
@@ -122,6 +137,8 @@ export function VariantTable({ variants }: { variants: Variant[] }) {
           </tbody>
         </table>
       </div>
+
+      <Pagination page={page} pageSize={PAGE_SIZE} totalItems={rows.length} onPageChange={setPage} />
     </div>
   );
 }

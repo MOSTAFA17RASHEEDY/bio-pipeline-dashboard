@@ -1,9 +1,12 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Pagination } from "../components/Pagination";
 import { StatCard } from "../components/StatCard";
 import { StatusBadge } from "../components/StatusBadge";
 import { useRunList } from "../hooks/useRunList";
 import type { RunStatus } from "../types";
+
+const PAGE_SIZE = 10;
 
 function timeAgo(iso: string | null): string {
   if (!iso) return "—";
@@ -19,6 +22,7 @@ function timeAgo(iso: string | null): string {
 export function DashboardPage() {
   const { runs, error } = useRunList();
   const [filter, setFilter] = useState<"ALL" | RunStatus>("ALL");
+  const [page, setPage] = useState(1);
 
   const stats = useMemo(() => {
     const list = runs ?? [];
@@ -36,6 +40,18 @@ export function DashboardPage() {
     const list = runs ?? [];
     return filter === "ALL" ? list : list.filter((r) => r.status === filter);
   }, [runs, filter]);
+
+  // Reset to page 1 when the filter changes, or when the list's length
+  // changes shape (e.g. a new run just got created) so we don't land on a
+  // now-empty trailing page.
+  useEffect(() => {
+    setPage(1);
+  }, [filter, runs?.length]);
+
+  const pageRuns = useMemo(
+    () => filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    [filtered, page],
+  );
 
   return (
     <div className="space-y-6 p-6">
@@ -104,7 +120,7 @@ export function DashboardPage() {
                 </tr>
               </thead>
               <tbody className="text-sm text-on-surface">
-                {filtered.map((run) => (
+                {pageRuns.map((run) => (
                   <tr key={run.id} className="border-t border-surface-container-high hover:bg-surface-container">
                     <td className="px-4 py-2.5 font-mono text-xs font-medium text-primary">RUN-{run.id}</td>
                     <td className="px-4 py-2.5">
@@ -135,6 +151,7 @@ export function DashboardPage() {
                 ))}
               </tbody>
             </table>
+            <Pagination page={page} pageSize={PAGE_SIZE} totalItems={filtered.length} onPageChange={setPage} />
           </div>
         )}
       </div>

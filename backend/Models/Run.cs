@@ -10,6 +10,7 @@ public class Run
 
     public string SampleFileName { get; set; } = "";
     public RunStatus Status { get; set; } = RunStatus.Queued;
+    public RunKind Kind { get; set; } = RunKind.Toy;
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? StartedAt { get; set; }
@@ -32,6 +33,17 @@ public class Run
     public int? SnpCount { get; set; }
     public int? InsCount { get; set; }
     public int? DelCount { get; set; }
+
+    // --- Real-pipeline (Kind=RealSarek) live progress, updated throughout
+    // the run by PipelineRunnerService.RunSarekAsync. Null for Kind=Toy. ---
+    public double? ProgressPercent { get; set; }
+    public string? CurrentStage { get; set; }
+    public int? EtaSecondsRemaining { get; set; }
+    public int? StepsCompleted { get; set; }
+    public int? StepsTotal { get; set; }
+
+    // --- Real-pipeline (Kind=RealSarek) coverage summary, best-effort. ---
+    public double? MeanDepth { get; set; }
 
     // Stretch goal: cached plain-language explanation from the LLM endpoint.
     public string? AiExplanation { get; set; }

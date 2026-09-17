@@ -70,16 +70,30 @@ public class GeminiExplanationService(
             "Write a short, plain-language explanation (4-6 sentences) of what this DNA analysis run found.");
         sb.AppendLine(
             "Avoid jargon; if you must use a technical term, briefly explain it in plain words. " +
-            "Only describe what is in the data below -- do not invent clinical significance or diagnoses, " +
-            "this is synthetic demo data, not a real patient sample.");
+            "Only describe what is in the data below -- do not invent clinical significance or diagnoses.");
         sb.AppendLine();
         sb.AppendLine($"Sample file: {run.SampleFileName}");
-        sb.AppendLine(
-            $"Quality check: {run.QcTotalReads} reads, mean quality score {run.QcMeanQuality}, " +
-            $"{run.QcPassRatePercent}% pass rate ({run.QcStatus}).");
-        sb.AppendLine(
-            $"Total variants found: {run.TotalVariants} " +
-            $"({run.SnpCount} single-letter changes, {run.InsCount} insertions, {run.DelCount} deletions).");
+
+        if (run.Kind == RunKind.RealSarek)
+        {
+            sb.AppendLine(
+                "This run used nf-core/sarek (a real, published, peer-reviewed bioinformatics pipeline) on a " +
+                "small public reference slice of NA12878 -- a well-known, de-identified reference human genome " +
+                "used worldwide to validate DNA analysis software. This is real sequencing data, not synthetic.");
+            sb.AppendLine(
+                $"Total variants found: {run.TotalVariants} " +
+                $"({run.SnpCount} single-letter changes, {run.InsCount} insertions, {run.DelCount} deletions).");
+        }
+        else
+        {
+            sb.AppendLine("This is synthetic demo data, not a real patient sample.");
+            sb.AppendLine(
+                $"Quality check: {run.QcTotalReads} reads, mean quality score {run.QcMeanQuality}, " +
+                $"{run.QcPassRatePercent}% pass rate ({run.QcStatus}).");
+            sb.AppendLine(
+                $"Total variants found: {run.TotalVariants} " +
+                $"({run.SnpCount} single-letter changes, {run.InsCount} insertions, {run.DelCount} deletions).");
+        }
         sb.AppendLine();
         sb.AppendLine("Variant details (position, reference base(s) -> sample base(s), type, read support):");
         foreach (var v in run.Variants.OrderBy(v => v.Position))

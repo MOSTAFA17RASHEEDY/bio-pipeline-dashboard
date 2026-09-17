@@ -15,6 +15,8 @@ builder.Services.PostConfigure<PipelineOptions>(opts =>
 {
     opts.PipelineDir = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, opts.PipelineDir));
     opts.RunsStorageDir = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, opts.RunsStorageDir));
+    opts.RealSarek.LaptopConfigPath = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, opts.RealSarek.LaptopConfigPath));
+    opts.RealSarek.SubsetConfigPath = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, opts.RealSarek.SubsetConfigPath));
 });
 
 // --- Database ---------------------------------------------------------------

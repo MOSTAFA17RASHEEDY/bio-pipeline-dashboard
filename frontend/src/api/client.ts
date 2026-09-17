@@ -25,6 +25,11 @@ export const api = {
     return fetch(`${BASE_URL}/api/runs`, { method: "POST", body: form }).then((r) => handle(r));
   },
 
+  // No upload -- always runs the same fixed, pre-validated NA12878 chr20
+  // dataset. 409s if a real run is already queued/running.
+  createRealRun: (): Promise<RunDetail> =>
+    fetch(`${BASE_URL}/api/runs/sarek`, { method: "POST" }).then((r) => handle(r)),
+
   vcfDownloadUrl: (id: number): string => `${BASE_URL}/api/runs/${id}/vcf`,
 
   getLogs: (id: number): Promise<string> =>

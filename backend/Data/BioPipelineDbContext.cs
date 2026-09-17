@@ -15,6 +15,10 @@ public class BioPipelineDbContext(DbContextOptions<BioPipelineDbContext> options
             .HasConversion<string>(); // store "Queued"/"Running"/etc, not an int, for readability
 
         modelBuilder.Entity<Run>()
+            .Property(r => r.Kind)
+            .HasConversion<string>(); // store "Toy"/"RealSarek", same reasoning
+
+        modelBuilder.Entity<Run>()
             .HasMany(r => r.Variants)
             .WithOne(v => v.Run!)
             .HasForeignKey(v => v.RunId)
